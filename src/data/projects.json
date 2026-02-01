@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Single Family Condo",
+    "location": "",
+    "description": "Bright, open-concept condo refresh with modern finishes, improved flow, and cozy gathering spaces.",
+    "beforeImage": "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=800&q=80",
+    "afterImage": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80"
+  },
+  {
+    "id": 2,
+    "title": "Single Family Home Refresh",
+    "location": "",
+    "description": "Whole-home update with clean lines, upgraded kitchen, and a warm, inviting living area.",
+    "beforeImage": "https://images.unsplash.com/photo-1591474200742-8e512e6f98f8?w=800&q=80",
+    "afterImage": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
+  },
+  {
+    "id": 3,
+    "title": "Single Family Home Revival",
+    "location": "",
+    "description": "Thoughtful renovation featuring updated exteriors, refreshed interiors, and modern detailing throughout.",
+    "beforeImage": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+    "afterImage": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80"
+  }
+]
