@@ -64,16 +64,6 @@ export default function ProjectCard({
                   >
                     <ChevronRight size={24} />
                   </button>
-                  <div className="gallery-indicators">
-                    {images.map((_, index) => (
-                      <button
-                        key={index}
-                        className={`indicator ${index === currentImageIndex ? 'active' : ''}`}
-                        onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(index); }}
-                        aria-label={`View photo ${index + 1}`}
-                      />
-                    ))}
-                  </div>
                 </>
               )}
             </div>
