@@ -4,7 +4,7 @@ import projectsData from "@/data/projects.json";
 interface Project {
   id: number;
   title: string;
-  location?: string;
+  location: string;
   description: string;
   type?: 'before-after' | 'gallery';
   beforeImage?: string;
