@@ -6,8 +6,10 @@ interface Project {
   title: string;
   location?: string;
   description: string;
-  beforeImage: string;
-  afterImage: string;
+  type?: 'before-after' | 'gallery';
+  beforeImage?: string;
+  afterImage?: string;
+  images?: string[];
 }
 
 export default function Projects() {
@@ -29,8 +31,10 @@ export default function Projects() {
             title={project.title}
             location={project.location}
             description={project.description}
+            type={project.type || 'before-after'}
             beforeImage={project.beforeImage}
             afterImage={project.afterImage}
+            images={project.images}
           />
         ))}
       </div>
