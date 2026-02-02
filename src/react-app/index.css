@@ -330,6 +330,7 @@ p {
 }
 
 /* Before/After Styles */
+.project-images {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   background-color: var(--color-background-alt);

@@ -13,7 +13,7 @@ interface Project {
 }
 
 export default function Projects() {
-  const projects: Project[] = projectsData;
+  const projects: Project[] = projectsData as Project[];
 
   return (
     <div className="page-container">
