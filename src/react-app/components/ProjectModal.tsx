@@ -57,16 +57,6 @@ export default function ProjectModal({
                   <button className="modal-nav next" onClick={nextImage} aria-label="Next photo">
                     <ChevronRight size={32} />
                   </button>
-                  <div className="modal-indicators">
-                    {images.map((_, index) => (
-                      <button
-                        key={index}
-                        className={`indicator ${index === currentImageIndex ? 'active' : ''}`}
-                        onClick={() => setCurrentImageIndex(index)}
-                        aria-label={`View photo ${index + 1}`}
-                      />
-                    ))}
-                  </div>
                 </>
               )}
             </div>
