@@ -1,4 +1,4 @@
-import { MapPin, ChevronLeft, ChevronRight } from "lucide-react";
+import { MapPin, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { useState } from "react";
 import ProjectModal from "./ProjectModal";
 
@@ -6,10 +6,11 @@ interface ProjectCardProps {
   title: string;
   location?: string;
   description: string;
-  type?: 'before-after' | 'gallery';
+  type?: 'before-after' | 'gallery' | 'video';
   beforeImage?: string;
   afterImage?: string;
   images?: string[];
+  videos?: string[];
 }
 
 export default function ProjectCard({
@@ -20,16 +21,25 @@ export default function ProjectCard({
   beforeImage,
   afterImage,
   images = [],
+  videos = [],
 }: ProjectCardProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
 
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    if (type === 'video') {
+      setCurrentImageIndex((prev) => (prev + 1) % videos.length);
+    } else if (type === 'gallery') {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }
   };
 
   const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+    if (type === 'video') {
+      setCurrentImageIndex((prev) => (prev - 1 + videos.length) % videos.length);
+    } else if (type === 'gallery') {
+      setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+    }
   };
   return (
     <>
@@ -42,9 +52,40 @@ export default function ProjectCard({
         beforeImage={beforeImage}
         afterImage={afterImage}
         images={images}
+        videos={videos}
       />
       <div className="project-card" onClick={() => setModalOpen(true)}>
-        {type === 'gallery' ? (
+        {type === 'video' ? (
+          <div className="project-gallery">
+            <div className="gallery-image-container">
+              <video 
+                src={videos[currentImageIndex]}
+                className="gallery-image"
+              />
+              <div className="video-play-overlay">
+                <Play size={48} />
+              </div>
+              {videos.length > 1 && (
+                <>
+                  <button 
+                    className="gallery-nav prev" 
+                    onClick={(e) => { e.stopPropagation(); prevImage(); }} 
+                    aria-label="Previous video"
+                  >
+                    <ChevronLeft size={24} />
+                  </button>
+                  <button 
+                    className="gallery-nav next" 
+                    onClick={(e) => { e.stopPropagation(); nextImage(); }} 
+                    aria-label="Next video"
+                  >
+                    <ChevronRight size={24} />
+                  </button>
+                </>
+              )}
+            </div>
+          </div>
+        ) : type === 'gallery' ? (
           <div className="project-gallery">
             <div className="gallery-image-container">
               <img src={images[currentImageIndex]} alt={`${title} - Photo ${currentImageIndex + 1}`} className="gallery-image" />
