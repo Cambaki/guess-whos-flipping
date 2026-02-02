@@ -1007,8 +1007,8 @@ p {
   align-items: center;
   justify-content: center;
   background-color: var(--color-background-alt);
-  overflow: hidden;
-  min-height: 400px;
+  overflow: auto;
+  min-height: 500px;
 }
 
 .modal-gallery-container {
@@ -1018,6 +1018,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
 }
 
 .modal-image {
