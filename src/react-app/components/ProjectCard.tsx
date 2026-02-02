@@ -59,7 +59,7 @@ export default function ProjectCard({
           <div className="project-gallery">
             <div className="gallery-image-container">
               <iframe
-                src={`https://www.youtube.com/embed/${videos[currentImageIndex]}`}
+                src={`https://www.youtube.com/embed/${videos[currentImageIndex]}?rel=0&modestbranding=1`}
                 className="gallery-image youtube-embed"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

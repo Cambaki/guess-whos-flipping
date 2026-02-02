@@ -56,7 +56,7 @@ export default function ProjectModal({
           <div className="modal-gallery-container">
             <iframe
               key={currentImageIndex}
-              src={`https://www.youtube.com/embed/${videos[currentImageIndex]}?autoplay=1`}
+              src={`https://www.youtube.com/embed/${videos[currentImageIndex]}?autoplay=1&rel=0&modestbranding=1`}
               className="modal-video youtube-embed"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
