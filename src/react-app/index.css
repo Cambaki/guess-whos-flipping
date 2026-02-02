@@ -708,6 +708,16 @@ p {
   animation: fadeIn 0.3s ease;
 }
 
+.error-message {
+  padding: 1rem;
+  background-color: #ef4444;
+  color: #ffffff;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

@@ -8,17 +8,41 @@ export default function Contact() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    // Frontend only - just show success message
-    setSubmitted(true);
-    setFormData({ name: "", email: "", message: "" });
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 5000);
+    setIsSubmitting(true);
+    setError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      setSubmitted(true);
+      setFormData({ name: "", email: "", message: "" });
+
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -100,14 +124,20 @@ export default function Contact() {
               />
             </div>
 
-            <button type="submit" className="submit-button">
+            <button type="submit" className="submit-button" disabled={isSubmitting}>
               <Send size={20} />
-              Send Message
+              {isSubmitting ? "Sending..." : "Send Message"}
             </button>
 
             {submitted && (
               <div className="success-message">
                 Thanks for reaching out! We'll get back to you soon.
+              </div>
+            )}
+
+            {error && (
+              <div className="error-message">
+                {error}
               </div>
             )}
           </form>

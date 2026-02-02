@@ -5,6 +5,7 @@ declare module "__STATIC_CONTENT_MANIFEST" {
 }
 
 interface Env {
-  // Add your environment variables here
-  // Example: API_KEY: string;
+  // Resend API key for sending emails
+  RESEND_API_KEY: string;
+  // Add other environment variables here
 }
