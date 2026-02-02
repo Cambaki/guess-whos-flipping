@@ -58,9 +58,11 @@ export default function ProjectCard({
         {type === 'video' ? (
           <div className="project-gallery">
             <div className="gallery-image-container">
-              <video 
-                src={videos[currentImageIndex]}
-                className="gallery-image"
+              <iframe
+                src={`https://www.youtube.com/embed/${videos[currentImageIndex]}`}
+                className="gallery-image youtube-embed"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
               />
               <div className="video-play-overlay">
                 <Play size={48} />

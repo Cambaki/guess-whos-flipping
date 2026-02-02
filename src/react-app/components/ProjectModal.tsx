@@ -54,12 +54,12 @@ export default function ProjectModal({
       {type === 'video' && (
         <div className="modal-gallery">
           <div className="modal-gallery-container">
-            <video 
+            <iframe
               key={currentImageIndex}
-              src={videos[currentImageIndex]} 
-              className="modal-video"
-              controls
-              autoPlay
+              src={`https://www.youtube.com/embed/${videos[currentImageIndex]}?autoplay=1`}
+              className="modal-video youtube-embed"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
             />
             {videos.length > 1 && (
               <>
