@@ -44,8 +44,8 @@ export default function Contact() {
             <Mail size={32} />
             <h3>Email Us</h3>
             <p>We typically respond within 24 hours</p>
-            <a href="mailto:info@guesswhosfipping.com" className="contact-link">
-              info@guesswhosfipping.com
+            <a href="mailto:Guesswhosflipping@gmail.com" className="contact-link">
+              Guesswhosflipping@gmail.com
             </a>
           </div>
           
