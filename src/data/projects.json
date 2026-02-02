@@ -5,7 +5,17 @@
     "location": "",
     "description": "Bright, open-concept condo refresh with modern finishes, improved flow, and cozy gathering spaces.",
     "type": "gallery",
-    "images": ["/images/projects/project-1/photo-1.jpg", "/images/projects/project-1/photo-2.jpg", "/images/projects/project-1/photo-3.jpg"]
+    "images": [
+      "/images/projects/project-1/20170705_151532.jpg",
+      "/images/projects/project-1/20170705_151616.jpg",
+      "/images/projects/project-1/20170705_151647.jpg",
+      "/images/projects/project-1/20170705_151659.jpg",
+      "/images/projects/project-1/20170705_151708.jpg",
+      "/images/projects/project-1/20170705_151725.jpg",
+      "/images/projects/project-1/20170705_151738.jpg",
+      "/images/projects/project-1/20170705_151813.jpg",
+      "/images/projects/project-1/20170705_151840.jpg"
+    ]
   },
   {
     "id": 2,
